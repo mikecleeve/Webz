@@ -1,0 +1,44 @@
+.tab-bar {
+    background: #4e5050;
+    height: 68px;
+}
+
+.tab-bar-section {
+padding-top: 9px;
+
+
+}
+
+.menu-icon{
+    background: #848484;
+}
+
+.login{
+
+padding-left: 20px;
+max-width: 250px;
+/*width: 250px;*/
+height: 68px;
+background: #848484;
+
+}
+.login .info{
+margin-left: 60px;
+    line-height: 2px;
+margin-top: -125px;
+    /*width: 160px;*/
+    height: 68px;
+    background: #848484;
+
+}
+.full-width {
+    width: 100%;
+    background: #fbfbfb;
+    border-top: 1px solid #cecece;
+    border-bottom: 1px solid #cecece;
+
+}
+.full-width ul {
+    background: #fbfbfb;
+    border: none;
+}

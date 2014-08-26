@@ -4,7 +4,7 @@
 $include-html-top-bar-classes: $include-html-classes !default;
 
 // Background color for the top bar
-$topbar-bg-color: #111 !default;
+$topbar-bg-color: #4e5050 !default;
 $topbar-bg: $topbar-bg-color !default;
 
 // Height and margin
@@ -19,7 +19,7 @@ $topbar-title-weight: bold !default;
 $topbar-title-font-size: em-calc(17) !default;
 
 // Style the top bar dropdown elements
-$topbar-dropdown-bg: #222 !default;
+$topbar-dropdown-bg: #4e5050 !default;
 $topbar-dropdown-link-color: #fff !default;
 $topbar-dropdown-link-bg: lighten($topbar-bg-color, 5%) !default;
 $topbar-dropdown-toggle-size: 5px !default;
@@ -32,7 +32,7 @@ $topbar-link-color-hover: #fff !default;
 $topbar-link-color-active: #fff !default;
 $topbar-link-weight: bold !default;
 $topbar-link-font-size: em-calc(13) !default;
-$topbar-link-hover-lightness: -30% !default; // Darken by 30%
+$topbar-link-hover-lightness: -100% !default; // Darken by 30%
 $topbar-link-bg-hover: adjust-color($topbar-dropdown-bg, $lightness: $topbar-link-hover-lightness) !default;
 $topbar-link-bg-active: darken($topbar-bg-color, 3%) !default;
 
@@ -105,7 +105,7 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
 
   .top-bar {
     overflow: hidden;
-    height: $topbar-height;
+    height: 0px;
     line-height: $topbar-height;
     position: relative;
     background: $topbar-bg;
@@ -117,7 +117,10 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
       list-style: none;
     }
 
-    .row { max-width: none; }
+    .row { max-width: none;
+    background-color: 54595a;
+
+    }
 
     form,
     input { margin-bottom: 0; }
@@ -239,7 +242,7 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
 
     ul {
       width: 100%;
-      height: auto;
+      height: 800px;
       display: block;
       background: $topbar-dropdown-bg;
       font-size: $em-base;
@@ -258,13 +261,13 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
     ul li {
       & > a {
         display: block;
-        width: 100%;
+        width: 200px;
+        height: 80px;
         color: $topbar-link-color;
         padding: 12px 0 12px 0;
         padding-#{$default-float}: $topbar-height / 3;
         font-size: $topbar-link-font-size;
         font-weight: $topbar-link-weight;
-        background: $topbar-dropdown-bg;
 
         &.button {
           background: $primary-color;
@@ -272,13 +275,13 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
            padding-right: $topbar-height / 3;
            padding-left: $topbar-height / 3;
           &:hover {
-            background: darken($primary-color, 10%);
+            background: lighten($primary-color, 20%);
           }
         }
         &.button.secondary {
           background: $secondary-color;
           &:hover {
-            background: darken($secondary-color, 10%);
+            background: lighten($secondary-color, 10%);
           }
         }
         &.button.success {
@@ -387,7 +390,7 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
   // Top Bar styles intended for screen sizes above the breakpoint.
   @media #{$topbar-media-query} {
     .top-bar {
-      background: $topbar-bg;
+   //   background: $topbar-bg;
       @include clearfix;
       overflow: visible;
 
@@ -398,12 +401,13 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
 
       input,
       .button {
+        background-color: #54595a;
         line-height: 2em;
         font-size: em-calc(14);
         height: 2em;
-        padding: 0 10px;
+     //   padding: 0 10px;
         position: relative;
-        top: 8px;
+      //  top: 8px;
       }
 
       &.expanded { background: $topbar-bg; }
@@ -421,7 +425,7 @@ $topbar-arrows: true !default; //Set false to remove the triangle icon from the 
 
       ul {
         width: auto;
-        height: auto !important;
+        height: 100%;
         display: inline;
 
         li {

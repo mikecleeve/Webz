@@ -1,129 +1,181 @@
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Foundation</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <link rel="stylesheet" href="stylesheets/app.css" />
-      <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/foundation.css"/>
+    <link rel="stylesheet" href="stylesheets/app.css"/>
+    <link rel="stylesheet" href="css/custom.css"/>
+    <script>
 
-  </head>
-  <body>
+        window.onload = function start() {
+            showImg();
+        }
+
+        function showImg() {
+
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else { // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("imgDiv").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", "getimg.php", true);
+            xmlhttp.send();
+        }
+        window.setInterval(function () {
+            showImg()
+
+        }, 3000);
 
 
-    <div class="off-canvas-wrap" data-offcanvas>
-        <div class="inner-wrap">
-            <nav class="tab-bar">
-                <section class="left-small hide-for-large-up" style="margin: 0px;">
-                    <div style="padding-left: 10px; padding-top: 10px;">
+    </script>
+
+</head>
+<body>
+
+
+<div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+        <nav class="tab-bar">
+            <section class="left-small hide-for-large-up" style="margin: 0px;">
+                <div style="padding-left: 10px; padding-top: 10px;">
                     <a class="left-off-canvas-toggle menu-icon" href="#"><span></span></a>
-                    </div>
-                </section>
-
-                <div class="large-2 columns login hide-for-medium-down">
-                   <h1><i class="fi-torso" style="color:white; font-size:72px;"></i></h1> &nbsp
-                  <div class="info">
-                   <h1> Guest </h1>  <br> Not logged in
-                  </div>
                 </div>
-                <div class="large-10 columns"></div>
+            </section>
 
 
-                <section class="middle tab-bar-section">
-                    <div class="large-6 small-6 columns">
-                    </div>
-                    <div class="large-6 small-6 columns">
-                        <img src="img/Logo.jpg">
-                    </div>
-
-                </section>
-
-            </nav>
-
-            <aside class="left-off-canvas-menu">
-                <ul class="off-canvas-list">
-                    <li><label>NAVIGATION</label></li>
-                    <li><a href="#">Homepage</a></li>
-                    <li><a href="#">Products</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Knowledgebase</a></li>
-                    <li><a href="#">Support forums</a></li>
-                    <li><label>ACCOUNTS</label></li>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><label>SEARCH</label></li>
-
-                </ul>
-            </aside>
-
-
-            <section class="main-section">
-
-
-                <div class="row">
-                <div class="small-1 columns"></div>
-                   <div class="small-11 columns">
-                    <br><br>
-                        <h3><small>BLOG / ALL POSTS</small></h3>
-                        <h2>Example Title</h2>
-                        <h2><small>An example of a sub heading</small></h2>
-                    <br>
-
-                   </div>
+            <div class="large-2 columns login hide-for-medium-down">
+                <h1><i class="fi-torso" style="color:white; font-size:72px;"></i></h1> &nbsp
+                <div class="info">
+                    <h1> Guest </h1>  <br> Not logged in
                 </div>
-                <div class="full-width">
-                    <div class="row ">
-                        <div class="small-12 large-centered columns">
-                            <ul class="large-block-grid-3">
-                                <br>
-                                <li><p><img class="th" src="img/Jellyfish.jpg"></p>
-                                    <div class="small 12 columns">
-                                        <p>Image1</p>
-                                        <hr/>
-                                        <p>Should come from db <a href="http://www.google.com/">Site link</a></p>
-                                    </div>
-                                </li>
-                                <li><p><img class="th" src="img/Koala.jpg"></p>
-                                    <div class="small 12 columns">
-                                        <p>Image2</p>
-                                        <hr/>
-                                        <p>Should come from db <a href="http://www.google.com/">Site link</a></p>
-                                    </div>
-                                </li>
-                                <li><p><img class="th" src="img/Penguins.jpg"></p>
+            </div>
+            <div class="large-10 columns"></div>
 
-                                    <div class="small 12 columns">
-                                        <p>Image3</p>
-                                        <hr/>
-                                        <p>Should come from db <a href="http://www.google.com/">Site link</a></p>
-                                    </div>
-                                </li>
-                            </ul>
-                            </div>
-                         </div>
+            <div class="navigation hide-for-medium-down">
+                <nav class="top-bar" data-topbar role="navigation">
+                    <ul class="title-area hide-for-small-up">
+                        <li class="name">
+                            <h1></h1>
+                        </li>
+                        <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                        <li class="toggle-topbar menu-icon"><span>Menu</span><<a href="#"></a></li>
+                    </ul>
+
+                    <section class="top-bar-section hide-for-medium-down">
+                        <!-- Left Nav Section -->
+                        <ul class="left">
+                            <li><p>NAVIGATION</p></li>
+                            <li><a href="#"><i class="fi-anchor" style="color:white; font-size:14px;"></i>&nbsp Homepage</a>
+                            </li>
+                            <li><a href="#"><i class="fi-save" style="color:white; font-size:14px;"></i>&nbsp Products</a>
+                            </li>
+                            <li><a href="#"><i class="fi-target" style="color:white; font-size:14px;"></i>&nbsp About Us</a>
+                            </li>
+                            <li><a href="#"><i class="fi-page" style="color:white; font-size:14px;"></i>&nbsp Blog</a>
+                            </li>
+                            <li><a href="#"><i class="fi-graph-pie" style="color:white; font-size:14px;"></i>&nbsp Knowledgebase</a>
+                            </li>
+                            <li><a href="#"><i class="fi-blind" style="color:white; font-size:14px;"></i>&nbsp Support
+                                forums</a></li>
+                            <li><p>ACCOUNTS</p></li>
+                            <li><a href="#"><i class="fi-torso"
+                                               style="color:white; font-size:14px;"></i>&nbsp Register</a></li>
+                            <li><a href="#"><i class="fi-torso" style="color:white; font-size:14px;"></i>&nbsp Login</a>
+                            </li>
+                            <li><p>SEARCH</p></li>
+                            <li class="has-form">
+                                <div class=" ">
+                                    <input type="text" style="border:0px;" placeholder="Example..">
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </nav>
+            </div>
+            <section class="middle tab-bar-section">
+                <div class="large-6 small-6 columns">
                 </div>
-                <div class="row">
-                    <div class="small-1 columns"></div>
-                    <div class="small-11 columns">
-                        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    </div>
+                <div class="large-6 small-6 columns">
+                    <img src="img/Logo.jpg">
                 </div>
 
             </section>
 
-            <a class="exit-off-canvas"></a>
+        </nav>
 
-        </div>
+        <aside class="left-off-canvas-menu">
+            <ul class="off-canvas-list">
+                <li><label>NAVIGATION</label></li>
+                <li><a href="#">Homepage</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Knowledgebase</a></li>
+                <li><a href="#">Support forums</a></li>
+                <li><label>ACCOUNTS</label></li>
+                <li><a href="#">Register</a></li>
+                <li><a href="#">Login</a></li>
+                <li><label>SEARCH</label></li>
+                <li class="has-form">
+                    <div class=" ">
+                        <input type="text" style="border:0px;" placeholder="Example..">
+                    </div>
+                </li>
+
+            </ul>
+        </aside>
+
+
+        <section class="main-section">
+
+
+            <div class="row">
+                <div class="small-1 columns"></div>
+                <div class="small-11 columns">
+                    <br><br>
+
+                    <h3>
+                        <small>BLOG / ALL POSTS</small>
+                    </h3>
+                    <h2>Example Title</h2>
+
+                    <h2>
+                        <small>An example of a sub heading</small>
+                    </h2>
+                    <br>
+
+                </div>
+            </div>
+            <div class="full-width">
+                <div class="row ">
+                    <div class="small-12 centered columns" id="imgDiv" style="padding-top: 0px;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+            </div>
+
+        </section>
+
+        <a class="exit-off-canvas"></a>
+
     </div>
+</div>
 
+<script src="js/foundation/foundation.js"></script>
+<script src="js/foundation/foundation.offcanvas.js"></script>
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+<script src="js/app.js"></script>
 
-    <script src="js/foundation/foundation.js"></script>
-    <script src="js/foundation/foundation.offcanvas.js"></script>
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script src="js/app.js"></script>
-
-  </body>
+</body>
 </html>
